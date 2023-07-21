@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 7</title>
+</head>
+
+<body>
+  <script>
+    function converterMoeda(valorReal, tipoMoeda) {
+      if (tipoMoeda !== "d" && tipoMoeda !== "e") {
+        return "Tipo de moeda inválido. Utilize 'd' para dólar ou 'e' para euro.";
+      }
+
+      if (isNaN(valorReal) || valorReal <= 0) {
+        return "Valor em real inválido. Insira um número positivo.";
+      }
+
+      let valorConvertido;
+      if (tipoMoeda === "d") {
+        valorConvertido = valorReal / 5.5;
+      } else if (tipoMoeda === "e") {
+        valorConvertido = valorReal / 7.0;
+      }
+
+      valorConvertido = valorConvertido.toFixed(2);
+
+      return `Valor convertido: ${valorConvertido} ${tipoMoeda === "d" ? "dólares" : "euros"}.`;
+    }
+
+    const valorReal = parseFloat(prompt("Digite o valor em real:"));
+    const tipoMoeda = prompt("Digite 'd' para dólar ou 'e' para euro:");
+
+    const resultado = converterMoeda(valorReal, tipoMoeda);
+    alert(resultado);
+  </script>
+</body>
+
+</html>

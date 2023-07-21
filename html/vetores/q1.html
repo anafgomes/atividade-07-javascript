@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 1</title>
+</head>
+
+<body>
+  <script>
+    function lerDadosAlunos() {
+      const nomes = [];
+      const notas = [];
+
+      for (let i = 0; i < 5; i++) {
+        const nome = prompt(`Digite o nome do aluno ${i + 1}:`);
+        nomes.push(nome);
+
+        const nota = parseFloat(prompt(`Digite a nota do aluno ${i + 1}:`));
+        notas.push(nota);
+      }
+
+      return { nomes, notas };
+    }
+
+    function calcularMedia(notas) {
+      const totalNotas = notas.reduce((total, nota) => total + nota, 0);
+      return totalNotas / notas.length;
+    }
+
+    function exibirDadosAlunos(nomes, notas) {
+      let mensagem = "Alunos e notas digitadas:\n";
+      for (let i = 0; i < nomes.length; i++) {
+        mensagem += `${nomes[i]} - Nota: ${notas[i]}\n`;
+      }
+      alert(mensagem);
+    }
+
+    function main() {
+      const { nomes, notas } = lerDadosAlunos();
+      exibirDadosAlunos(nomes, notas);
+
+      const mediaTotal = calcularMedia(notas);
+      alert(`Média total das notas: ${mediaTotal.toFixed(2)}`);
+    }
+
+    main();
+  </script>
+</body>
+
+</html>

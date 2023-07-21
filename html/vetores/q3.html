@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 3</title>
+</head>
+
+<body>
+  <script>
+    function lerTemperaturasSemana() {
+      const temperaturas = [];
+      for (let i = 0; i < 7; i++) {
+        const temperatura = parseFloat(prompt(`Digite a temperatura média do dia ${i + 1}:`));
+        temperaturas.push(temperatura);
+      }
+      return temperaturas;
+    }
+
+    function main() {
+      const temperaturasSemana = lerTemperaturasSemana();
+
+      const menorTemperatura = Math.min(...temperaturasSemana);
+      const maiorTemperatura = Math.max(...temperaturasSemana);
+
+      alert(`Menor temperatura da semana: ${menorTemperatura.toFixed(2)}°C`);
+      alert(`Maior temperatura da semana: ${maiorTemperatura.toFixed(2)}°C`);
+    }
+
+    main();
+  </script>
+</body>
+
+</html>

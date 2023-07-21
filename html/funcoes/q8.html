@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 8</title>
+</head>
+
+<body>
+  <script>
+    function verificarEmprestimo(renda) {
+      const limitePorcentagem = 0.3;
+
+      const valorParcela = parseFloat(prompt("Digite o valor da parcela do empréstimo:"));
+
+      const parcelaMaxima = renda * limitePorcentagem;
+
+      if (valorParcela <= parcelaMaxima) {
+        alert("EMPRÉSTIMO APROVADO");
+      } else {
+        alert("EMPRÉSTIMO NÃO APROVADO");
+      }
+    }
+
+    const rendaCliente = parseFloat(prompt("Digite o valor da renda do cliente:"));
+    verificarEmprestimo(rendaCliente);
+  </script>
+</body>
+
+</html>

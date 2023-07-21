@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 4</title>
+</head>
+
+<body>
+  <script>
+    function main() {
+      const clientes = [];
+
+      while (true) {
+        const nome = prompt("Digite o nome do cliente (ou 'Fim' para encerrar):");
+        if (nome.toLowerCase() === "fim") break;
+
+        const idade = parseInt(prompt("Digite a idade do cliente:"));
+        const cliente = { nome, idade };
+        clientes.push(cliente);
+      }
+
+      const clientesPreferenciais = clientes.filter(cliente => cliente.idade >= 60);
+      const clientesFilaNormal = clientes.filter(cliente => cliente.idade < 60);
+
+      alert("Ordem de atendimento (Preferencial):\n" + exibirOrdemAtendimento(clientesPreferenciais));
+      alert("Ordem de atendimento (Fila normal):\n" + exibirOrdemAtendimento(clientesFilaNormal));
+    }
+
+    function exibirOrdemAtendimento(clientes) {
+      return clientes.map((cliente, index) => `${index + 1}. ${cliente.nome} (Idade: ${cliente.idade})`).join("\n");
+    }
+
+    main();
+  </script>
+</body>
+
+</html>

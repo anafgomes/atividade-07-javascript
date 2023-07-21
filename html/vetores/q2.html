@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 2</title>
+</head>
+
+<body>
+  <script>
+    function lerArray() {
+      const array = [];
+      for (let i = 0; i < 10; i++) {
+        const numero = parseFloat(prompt(`Digite o número ${i + 1}:`));
+        array.push(numero);
+      }
+      return array;
+    }
+
+    function multiplicarArrayPorX(array, x) {
+      const resultado = [];
+      for (let i = 0; i < array.length; i++) {
+        resultado.push(array[i] * x);
+      }
+      return resultado;
+    }
+
+    function exibirArray(array) {
+      let mensagem = "Array resultante:\n";
+      for (let i = 0; i < array.length; i++) {
+        mensagem += `${array[i]}\n`;
+      }
+      alert(mensagem);
+    }
+
+    function main() {
+      const arrayA = lerArray();
+      const x = parseFloat(prompt("Digite o valor de X:"));
+      const arrayM = multiplicarArrayPorX(arrayA, x);
+      exibirArray(arrayM);
+    }
+
+    main();
+  </script>
+</body>
+
+</html>
